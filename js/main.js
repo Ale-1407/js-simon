@@ -9,3 +9,20 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei
 numeri da indovinare sono stati individuati.
 
 */
+
+//creo array vuoto
+let numeri = [];
+
+//genero 5 numeri casuali con una funzione
+function generaNumeriRandom(){
+    
+    for( i = 1; i <= 5; i++){
+
+    num = Math.round(Math.random() * 100);
+    numeri.push(num);
+    }
+
+    console.log(numeri);
+}
+
+generaNumeriRandom();
