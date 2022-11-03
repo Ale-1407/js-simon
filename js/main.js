@@ -22,10 +22,17 @@ function generaNumeriRandom(){
     numeri.push(num);
 
     //stampo in pagina i numeri generati che l'utente dovrà ricordarsi
-    document.getElementById('risultatoNumeriGenerati').innerHTML = `<h1>I tuoi numeri sono: ${numeri}</h1>`
+    document.getElementById('risultatoNumeriGenerati').innerHTML = `<h1>I tuoi numeri da ricordare sono: ${numeri}</h1>`
     }
 
     console.log(numeri);
 }
 
 generaNumeriRandom();
+
+//faccio scomparire i numeri dopo 5 secondi
+setTimeout (nascondiNumeri, 5000);
+
+function nascondiNumeri(){
+    document.getElementById('risultatoNumeriGenerati').classList.add('display');
+}
