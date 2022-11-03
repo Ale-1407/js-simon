@@ -12,11 +12,12 @@ numeri da indovinare sono stati individuati.
 
 //creo array vuoto
 let numeri = [];
+let numInseriti = [];
 
 //genero 5 numeri casuali con una funzione
 function generaNumeriRandom(){
     
-    for( i = 1; i <= 5; i++){
+    for(let i = 1; i <= 5; i++){
 
     num = Math.round(Math.random() * 100);
     numeri.push(num);
@@ -35,4 +36,24 @@ setTimeout (nascondiNumeri, 5000);
 
 function nascondiNumeri(){
     document.getElementById('risultatoNumeriGenerati').classList.add('display');
+}
+
+setTimeout (numeriDaInserire, 6000);
+
+function numeriDaInserire(){
+    
+    for(let i = 0; i < 5; i++ ){
+      numUser = parseInt(prompt('Ti ricordi tutti i numeri?'));
+      numInseriti.push(numUser);
+    }
+    console.log(numInseriti); 
+}
+
+function controllo(){
+    let count = 0;
+    for(let i = 0; i < 5; i++){
+        if(numeri[i] == numInseriti[i]){
+            count++;
+        } 
+    }
 }
