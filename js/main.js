@@ -20,6 +20,9 @@ function generaNumeriRandom(){
 
     num = Math.round(Math.random() * 100);
     numeri.push(num);
+
+    //stampo in pagina i numeri generati che l'utente dovrà ricordarsi
+    document.getElementById('risultatoNumeriGenerati').innerHTML = `<h1>I tuoi numeri sono: ${numeri}</h1>`
     }
 
     console.log(numeri);
