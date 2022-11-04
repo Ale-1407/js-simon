@@ -13,6 +13,7 @@ numeri da indovinare sono stati individuati.
 //creo array vuoto
 let numeri = [];
 let numInseriti = [];
+let risultato = document.getElementById('risultato');
 
 //genero 5 numeri casuali con una funzione
 function generaNumeriRandom(){
@@ -44,16 +45,14 @@ function numeriDaInserire(){
     
     for(let i = 0; i < 5; i++ ){
       numUser = parseInt(prompt('Ti ricordi tutti i numeri?'));
-      numInseriti.push(numUser);
+      
+      if(numeri.includes(numUser)){
+        //se la risposta è si, pushare i numeri in array numeriInseriti
+        numInseriti.push(numUser);
+      }
     }
-    console.log(numInseriti); 
+    //stampare quanti e quali numeri sono stati indovinati dall'utente
+    risultato.innerHTML = `Il tuo punteggio è: ${numInseriti.length}, i numeri che hai azzeccato sono: ${numInseriti}`
+    console.log('I numeri giusti sono:', numInseriti); 
 }
 
-function controllo(){
-    let count = 0;
-    for(let i = 0; i < 5; i++){
-        if(numeri[i] == numInseriti[i]){
-            count++;
-        } 
-    }
-}
